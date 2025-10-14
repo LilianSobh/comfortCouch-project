@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>buy page</title>
+        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="header">
+            <div id="logo">
+                <h1 id="h1">ComfortCouch</h1>
+                <div id="icons">
+                    <img src="images/cicono.png" alt="cicon" id="icon">
+                    <img src="images/freesyrianflagicon.png" alt="syriaicon" id="icon">
+                </div>
+            </div>
+
+            <nav class="navbar navbar-expand-lg " id="nav">
+                <div class="container-fluid">
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                      <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+                        <li>
+                          <a class="nav-link active" aria-current="page" href="index.html">main</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="buy.html">buy now</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="login.html">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signup.html">signup</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">about</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+        </div>
+        <div class="buy-page-container">    
+            <table>
+                <tr>
+                    <th>ضع كود المنتج هنا :</th>
+                    <td><input type="text" name="code-input" placeholder="WW-NNN"
+                    maxlength="6" autofocus required></td>
+                </tr>
+                <tr>
+                    <th>اختر اللون :</th>
+                    <td>
+                        <select name="color" required id="color-options">
+                            <option value="" hidden>اختر اللون</option>
+                            <option value="blue">أزرق</option>
+                            <option value="white">أبيض</option>
+                            <option value="light-blue">أزرق فاتح</option>
+                            <option value="blue-gray">أزرق رمادي</option>
+                            <option value="gray">رمادي</option>
+                            <option value="oily">زيتي</option>
+                            <option value="light-gray">رمادي فاتح</option>
+                            <option value="pink">زهري</option>
+                            <option value="biej">بيج</option>
+                            <option value="green">أخضر</option>
+                            <option value="oily-white">أبيض-زيتي</option>
+                            <option value="owv-white">أوف وايت</option>
+                            <option value="oily-gray">رمادي زيتي</option>
+                            <option value="cammouni">كموني</option>
+                            <option value="colored">ملونة</option>
+                            <option value="black-white">أبيض-أسود</option>
+                            <option value="purple">بنفسجي</option>
+                            <option value="dark-blue">كحلي</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>عدد المنتجات التي تريدها :</th>
+                    <td><input id="number-of-products" type="number" min="1" max="50" required></td>
+                </tr>
+                <tr>
+                    <th>اختر طريقة الدفع :</th>
+                    <td>
+                        <select name="paymentway" size="3" id="paymentMethodSelect" required>
+                            <option value="check">شيك</option>
+                            <option value="online">أون لاين</option>
+                            <option value="cash" selected>كاش</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>اكتب عنوانك بالتفصيل هنا :</th>
+                    <td><input type="text" name="address" id="addressInput"></td>
+                </tr>
+                <tr>
+                    <th>ادخل بريدك الالكتروني هنا :</th>
+                    <td><input type="email" name="email" id="emailInput" placeholder="ادخل بريدك من فضلك" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" class="btn" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"
+                        value="أضف إلى سلة المشتريات"/>
+                        <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+                          <div class="offcanvas-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                          </div>
+                          <div class="offcanvas-body">
+                            <div>
+                                <p id="offcanvas-p"></p>
+                            </div>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <footer>
+            <span id="email">contact us: Comfort@gmail.com</span>
+            <div class="divfoot">
+                <a href="https://www.whatsapp.com"><i class="fab fa-whatsapp" id="icon"></i></a>
+                <a href="https://www.facebook.com"><i class="fab fa-facebook" id="icon"></i></a>
+                <a href="https://www.instagram.com"><i class="fab fa-instagram" id="icon"></i></a>
+                <a href="https://www.linkedin.com"><i class="fab fa-linkedin" id="icon"></i></a>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
