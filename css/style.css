@@ -179,11 +179,12 @@ footer #email {
     flex-direction: column;
     gap: 6px;
     margin-top: var(--main-margin);
+    padding: var(--main-padding);
 }
 
 .detail-container h2 {
     font-size: 30px;
-    text-align: right;
+    direction: rtl;
 }
 
 .detail-container .show-picture {
@@ -312,6 +313,7 @@ footer #email {
 
 .login-signup-container {
     margin-top: var(--main-margin);
+    padding: 0 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -439,19 +441,19 @@ footer #email {
 }
 
 .google-section i {
-    color: gray;
+    color: white;
     font-size: 30px;
 }
 
 .google-section i:hover,
 .social-links i:hover {
-    color: #fff;
+    color: gray;
 }
 
 .social-links {
     display: flex;
     justify-content: space-around;
-    background-color: gray;
+    background-color: white;
     margin-bottom: 10px;
     padding: var(--main-padding);
 }
@@ -730,13 +732,14 @@ footer #email {
         width: 15rem;
         height: 15rem;
     }
-    
-    .about-container h2 {
-        font-size: 18px;
-    }
 
     .social-links i {
         font-size: 16px;
+    }
+
+    .footer .headings h2,
+    .google-section {
+        font-size: 14px;
     }
 
     .google-section i {
