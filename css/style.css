@@ -215,6 +215,7 @@ footer #email {
 }
 
 #pId {
+    direction: rtl;
     text-align:right;
     margin:0px 25px; 
     line-height: 50px; 
@@ -707,8 +708,16 @@ footer #email {
         font-size: 15px;
     }
     
+    .colors-section-div {
+        padding: 0 10px;
+    }
+    
+    .colors-section-div .colors {
+        padding: 0;
+    }
+
     .image1,.image2 {
-        width: 120px;
+        width: 100px;
         height: 80px;
     }
 
