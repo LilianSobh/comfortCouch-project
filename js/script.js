@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imgElement.src = imageUrl; // تعيين مصدر الصورة
         imgElement.alt = productTitle; // تعيين نص بديل للصورة (مهم للـ accessibility)
     } else if (imgElement) { // إذا كان عنصر الصورة موجود ولكن مسار الصورة غير موجود
-        imgElement.src = 'images/default-furniture.jpg'; // استخدام صورة افتراضية
+        imgElement.src = 'images/1.jpg'; // استخدام صورة افتراضية
         imgElement.alt = 'صورة غير متوفرة';
     }
 
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 6. بناء وعرض خيارات الألوان المتوفرة
     //    شرط: productColors.length >= 1 (يعني أن هناك لون واحد على الأقل في المصفوفة)
     if (productColors.length >= 1) {
-        colorsHeading.textContent = ": الألوان المتوفرة"; // تحديث عنوان قسم الألوان
+        colorsHeading.textContent = "الألوان المتوفرة :"; // تحديث عنوان قسم الألوان
         colorOptionsContainer.innerHTML = ''; // تفريغ أي محتوى سابق (مثل نصوص افتراضية)
 
         // المرور على كل لون في مصفوفة productColors
@@ -143,9 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // ملاحظة: هذه الطريقة بسيطة لكنها قد تكون أقل كفاءة للمرور على عدد كبير من العناصر
             // ولن تسمح بإضافة Event Listeners بسهولة مباشرة هنا (كما تم في التحديث السابق)
             const colorDiv = `
-                <div class="color-photo color-option">
+                <div class="color-photo">
                     <div class="image">
-                            <img src="${colorOption.image}" class="image1" alt ="${colorOption.name}-couch">
+                            <img src="${colorOption.image}" class="image1" alt ="${colorOption.name}-كنبة">
                     </div>
                     <h2 class="color">${colorOption.name}</h2>
                 </div>
@@ -188,7 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
         //    checkValidity() تتحقق من الحقول المطلوبة (required) وأن قيمها ضمن الحدود المسموحة (min, max).
         //    إذا كانت المدخلات غير صالحة، نتوقف هنا.
         if (!numberOfProductsInput.checkValidity() || !emailInput.checkValidity()) {
-            // المتصفح سيعرض رسائل الخطأ الافتراضية للحقول غير الصالحة.
+            offcanvasP.innerHTML = `
+            <p class="error-message">
+                <i class="fas fa-exclamation-circle"></i>
+                <strong>خطأ:</strong> يرجى ملئ كافة الحقول
+            </p>`
             return; // إيقاف تنفيذ باقي الكود في هذه الدالة.
         }
 
@@ -210,14 +214,13 @@ document.addEventListener('DOMContentLoaded', () => {
             //    (نفترض أن paymentMethodSelect لا يزال فيه ميزة 'multiple' أو أنه اختيار واحد)
             //    للحصول على جميع القيم المختارة في select متعدد:
             const selectedPaymentMethods = Array.from(paymentMethodSelect.selectedOptions).map(option => option.textContent);
-            const paymentMethodsString = selectedPaymentMethods.join(', ') || 'لم يتم تحديد طريقة دفع';
 
             offcanvasP.innerHTML = `
             <p><strong>تم إضافة منتجك إلى سلة المشتريات بنجاح!</strong></p>
             <ul class="offcanvas-menu">
                 <li><strong>اللون المختار:</strong> ${selectedColorText} (${selectedColorValue})</li>
                 <li><strong>عدد المنتجات:</strong> ${numberOfProducts}</li>
-                <li><strong>طريقة الدفع:</strong> ${paymentMethodsString}</li>
+                <li><strong>طريقة الدفع:</strong> ${selectedPaymentMethods}</li>
                 <li><strong>عنوان الشحن:</strong> ${address || 'لم يتم إدخال عنوان'}</li>
             </ul>
             <p>سنقوم بمعالجة طلبك قريباً</p>
@@ -244,12 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
             // لأنك تريدين أن يظهر الـ Offcanvas ليحتوي على رسالة الخطأ.
             // في هذه الحالة، يجب أن يكون الـ HTML مهيأ ليظهر رسالة الخطأ بدلاً من رسالة التأكيد.
         }
-    });
-
-    // 10. إضافة مستمع حدث (Event Listener) لتغيير اللون في الـ select
-    //     لتسجيل القيمة المختارة في الـ console (لأغراض التصحيح أو المراقبة).
-    productColorSelect.addEventListener('change', () => {
-        console.log("تم اختيار لون:", productColorSelect.value);
     });
 });
 
