@@ -355,6 +355,13 @@ footer #email {
     color: beige;
 }
 
+#error-message {
+    text-align: center;
+    font-size: 25px;
+    text-transform: capitalize;
+    color: var(--footer-color);
+}
+
 /* //////////////////////////////////// */
 /* style for buy.html  */
 

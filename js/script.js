@@ -249,5 +249,43 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// ///////////////////////////////////////////////
+// signup.html
 
+document.addEventListener('DOMContentLoaded', function () {
+    const formRegister = document.querySelector(".form-registration");
+
+    formRegister.addEventListener('submit', showMessage);
+
+    function showMessage (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name-signup").value.trim();
+        const email = document.getElementById("email-signup").value.trim();
+        const password = document.getElementById("password-signup").value;
+        const confirmPassword = document.getElementById("confirmpassword").value;
+        const errorMessage = document.getElementById("error-message");
+    
+        errorMessage.textContent = "";
+    
+        if (!name || !email || !password || !confirmPassword) {
+            errorMessage.textContent = "all fields are required !";
+            return;
+          }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                errorMessage.textContent = "email is not true !";
+                return;
+            }
+        
+        if (password !== confirmPassword) {
+            errorMessage.textContent = "password and confirm password are not equal !";
+            return;
+        }
+            
+        alert("you've successfully sent you information !");
+    };
+    
+});
 

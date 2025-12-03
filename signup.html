@@ -55,17 +55,18 @@
               </nav>
         </div>
         <div class="login-signup-container">
-          <form action="">
-                <label for="email-signup">Email:</label> 
-                <input type="email" name="email" id="email-signup" placeholder="write your email">
-                <label for="phonum">Phone Number:</label> 
-                <input type="number" name="phonum" id="phonum" placeholder="write your phoneNumber">
-                <label for="password-signup">Pass word:</label> 
-                <input type="password" name="password" id="password-signup" placeholder="enter your password here">
-                <label for="confirmpassword">Confirm Pass word:</label>
-                <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirm your password">
-                <input type="submit" value="SignUp" class="login-signup-submit">
-            </form>
+          <form action="" class="form-registration">
+              <label for="name-signup">Name:</label> 
+              <input type="text" name="name" id="name-signup" placeholder="write your name">
+              <label for="email-signup">Email:</label> 
+              <input type="email" name="email" id="email-signup" placeholder="write your email">
+              <label for="password-signup">Pass word:</label> 
+              <input type="password" name="password" id="password-signup" placeholder="enter your password here">
+              <label for="confirmpassword">Confirm Pass word:</label>
+              <input type="password" name="confirmpassword" id="confirmpassword" placeholder="confirm your password">
+              <button type="submit" class="login-signup-submit">SignUp</button>
+          </form>
+          <p id="error-message"></p>
         </div>
         <footer>
             <span id="email">contact us: Comfort@gmail.com</span>
